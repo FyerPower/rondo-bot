@@ -1,0 +1,5 @@
+{
+    "discord_token" : "token",
+    "command_prefix": "-",
+    "admin_ids": ["id"]
+}

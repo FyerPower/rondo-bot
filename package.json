@@ -1,0 +1,27 @@
+{
+  "name": "RondoBot",
+  "version": "1.0.0",
+  "description": "Bot for Discord app",
+  "readme": "README.md",
+  "maintainers": [],
+  "author": "",
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "GPL-2.0",
+  "dependencies": {
+    "discord.js": "^11.0.0",
+    "nock": "1.7.x",
+    "pmx": "^0.5.5",
+    "querystring": "*",
+    "request": ">=2.58.0",
+    "sinon": "1.14.x",
+    "steamidconvert": "*",
+    "underscore": "1.8.x",
+    "wikijs": "*",
+    "winston": "1.0.x",
+    "xml2js": "*"
+  },
+  "main": "discord_bot.js"
+}
