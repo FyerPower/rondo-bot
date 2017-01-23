@@ -4,7 +4,6 @@ var RollHistory = require('../models/roll-history').RollHistory;
 Commands.add("item", {
     name: "item",
     description: "",
-    extendedhelp: "",
     usage: "[item name]",
     process: function(message, suffix) {
         RollHistory.clear();

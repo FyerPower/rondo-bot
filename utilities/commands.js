@@ -19,6 +19,10 @@ class Commands {
         return this.commandList[key];
     }
 
+    getCommands() {
+        return this.commandList;
+    }
+
     hasCooldown(key) {
         var command = this.getCommand(key);
         if(command.hasOwnProperty("timeout") && command.hasOwnProperty("lastExecutedTime")){

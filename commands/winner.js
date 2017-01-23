@@ -7,8 +7,7 @@ var RollHistory = require('../models/roll-history').RollHistory;
 
 Commands.add("winner", {
     name: "winner",
-    description: "",
-    extendedhelp: "",
+    description: "Announces the winner of who had the higest rolls.",
     usage: "",
     process: function(message, suffix) {
         var numHighRollers = 1;

@@ -7,7 +7,6 @@ var RollHistory = require('../models/roll-history').RollHistory;
 Commands.add("roll", {
     name: "roll",
     description: "Random number generator, yay!",
-    extendedhelp: "I'll randomize some numbers for you, handy!",
     usage: "[number] | -roll [behalfOf] | -roll [number] [behalfOf]",
     process: function(message, suffix) {
         var maxRoll = 100;

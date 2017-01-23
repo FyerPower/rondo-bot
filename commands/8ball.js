@@ -3,7 +3,6 @@ var Commands = require('../utilities/commands.js').Commands;
 Commands.add("8ball", {
     name: "8ball",
     description: "Makes executive decisions super easy!",
-    extendedhelp: "I'll function as an magic 8 ball for a bit and anwser all of your questions! (So long as you enter the questions as suffixes.)",
     process: function(message, suffix) {
         var choices = [
             "It is certain", 

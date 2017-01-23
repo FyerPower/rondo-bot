@@ -3,7 +3,6 @@ var Commands = require('../utilities/commands.js').Commands;
 Commands.add("xkcd", {
     name: "xkcd",
     description: "Returns a random (or chosen) xkcd comic",
-    extendedhelp: "I'll get a XKCD comic for you, you can define a comic number and I'll fetch that one.",
     usage: "[current, or comic number]",
     process: function(message, suffix) {
         var request = require('request');

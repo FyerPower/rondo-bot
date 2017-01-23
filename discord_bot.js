@@ -9,6 +9,7 @@ var ConfigFile = require("./config.json");
 var ChatLog    = require("./utilities/logger.js").ChatLog;
 var Logger     = require("./utilities/logger.js").Logger;
 var Commands   = require('./utilities/commands.js').Commands;
+var MessageQueueWorker = require('./utilities/message-queue-worker.js').MessageQueueWorker;
 
 var Discord = require("discord.js");
 var client = new Discord.Client();
@@ -38,11 +39,13 @@ function init(){
 
 client.on("ready", () => {
     Logger.log("info", "Ready!");
+    MessageQueueWorker.start();
     client.user.setGame("with Aisha");
 });
 
 client.on("disconnected", () => {
     Logger.log("error", "Disconnected!");
+    MessageQueueWorker.stop();
     process.exit(0); // exit node.js without an error, seeing this is 9 out of 10 times intentional.
 });
 

@@ -3,7 +3,7 @@ var Commands = require('../utilities/commands.js').Commands;
 Commands.add("purge", {
     name: "purge",
     usage: "<number-of-messages-to-delete> [force]",
-    extendedhelp: "I'll delete a certain ammount of messages.",
+    description: "I'll delete a certain ammount of messages.",
     process: function(message, suffix) {
         // if (!message.channel.server) {
         //     message.channel.sendMessage("You can't do that in a DM, dummy!");
