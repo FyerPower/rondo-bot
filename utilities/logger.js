@@ -1,3 +1,5 @@
+"use strict";
+
 var Winston = require('winston');
 
 // Chat Logger

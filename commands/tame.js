@@ -1,14 +1,19 @@
+"use strict";
+
 var Commands  = require('../utilities/commands.js').Commands;
 var Utilities = require('../utilities/utilities.js').Utilities;
 var moment    = require('moment'); 
 
 var FamiliarData = {
+    // Hakanas Highlands
     "garme":    { name: "Garme",                respawn: 60   },
     "agnes":    { name: "Agnes the Red",        respawn: 60   },
+    // Parna's Coast
     "terror":   { name: "Terror Kerav",         respawn: 120  },
     "caspert":  { name: "Venomous Caspert",     respawn: 120  },
     "apoc":     { name: "Apocolypse",           respawn: 300  },
     "karresh":  { name: "Karresh",              respawn: 140  },
+    // Triteal Rift
     "leto":     { name: "Void Letonsia",        respawn: null },
     "void":     { name: "Void Kargyle",         respawn: null },
     "twilight": { name: "Twilight Kargyle",     respawn: null },
@@ -16,6 +21,15 @@ var FamiliarData = {
     "lunafont": { name: "Lunafont",             respawn: 120  },
     "karasha":  { name: "Karasha the Dark One", respawn: null },
     "paragas":  { name: "Paragas the Mad",      respawn: null },
+    "veldon":   { name: "Veldon",               respawn: null },
+    // Cloying Wastes
+    "trino":    { name: "[Name]",               respawn: null },
+    "poyo":     { name: "[Name]",               respawn: null },
+    "panos":    { name: "[Name]",               respawn: null },
+    "chanus":   { name: "[Name]",               respawn: null },
+    "tolus":    { name: "[Name]",               respawn: null },
+    "bajarn":   { name: "[Name]",               respawn: null },
+    "shakiba":  { name: "[Name]",               respawn: null },
 };
 
 var extHelpMsg = "List of Supported Familiars:";

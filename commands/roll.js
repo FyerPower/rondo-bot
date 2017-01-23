@@ -1,4 +1,8 @@
-var Commands = require('../utilities/commands.js').Commands;
+"use strict";
+
+var Commands    = require('../utilities/commands.js').Commands;
+var Utilities   = require('../utilities/utilities.js').Utilities;
+var RollHistory = require('../models/roll-history').RollHistory;
 
 Commands.add("roll", {
     name: "roll",
@@ -21,18 +25,12 @@ Commands.add("roll", {
             }
         }
         var roll = Math.ceil(Math.random() * maxRoll);
+        RollHistory.add(message.author, roll);
         if(behalfOf){
             message.channel.sendMessage(message.author + " (for "+behalfOf+") rolled a number between 1-"+maxRoll+" and received **" + roll + "**");
         } else {
             message.channel.sendMessage(message.author + " rolled a number between 1-"+maxRoll+" and received **" + roll + "**");
         }
-        safeDeleteMessage(message);
+        Utilities.safeDeleteMessage(message);
     }
 });
-
-
-function safeDeleteMessage(message){
-    setTimeout(function(){
-        message.delete();
-    }, 100);
-}

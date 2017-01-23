@@ -12,6 +12,7 @@
   "license": "GPL-2.0",
   "dependencies": {
     "discord.js": "^11.0.0",
+    "lodash": "^4.17.4",
     "nock": "1.7.x",
     "pmx": "^0.5.5",
     "querystring": "*",
