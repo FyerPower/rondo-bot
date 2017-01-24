@@ -4,7 +4,7 @@ var ConfigFile = require("../config.json");
 
 class Commands {
     constructor(){
-        this.commandList = [];
+        this.commandList = {};
     }
 
     add(key, value){
