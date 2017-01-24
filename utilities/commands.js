@@ -41,9 +41,9 @@ class Commands {
         return true;
     }
 
-    execute(key, message, suffix) {
+    execute(key, message, suffix, client) {
         var command = this.getCommand(key);
-        command.process(message, suffix);
+        command.process(message, suffix, client);
     }
 }
 

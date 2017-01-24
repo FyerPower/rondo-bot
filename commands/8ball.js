@@ -1,3 +1,5 @@
+"use strict";
+
 var Commands = require('../utilities/commands.js').Commands;
 
 Commands.add("8ball", {

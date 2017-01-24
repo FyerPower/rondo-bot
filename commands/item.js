@@ -1,3 +1,5 @@
+"use strict";
+
 var Commands = require('../utilities/commands.js').Commands;
 var RollHistory = require('../models/roll-history').RollHistory;
 

@@ -64,16 +64,16 @@ client.on("message", (message) => {
 
         if (Commands.hasCommand(cmdTxt)) {
             if(Commands.hasCooldown(cmdTxt)){
-                message.channel.sendMessage("Hey " + message.sender + ", this command is on cooldown!");
+                message.channel.sendMessage("Hey " + message.author + ", this command is on cooldown!");
                 return false;
             }
             if(!Commands.hasPermission(cmdTxt, message.author.id)){
-                message.channel.sendMessage("Hey " + message.sender + ", you are not allowed to do that!");
+                message.channel.sendMessage("Hey " + message.author + ", you are not allowed to do that!");
                 return false;
             }
-            Commands.execute(cmdTxt, message, suffix);
+            Commands.execute(cmdTxt, message, suffix, client);
         } else {
-            message.channel.sendMessage("Hey " + message.sender + ", that command couldn't be found!");
+            // message.channel.sendMessage("Hey " + message.author + ", that command couldn't be found!");
         }
     }
 });
