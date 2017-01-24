@@ -21,7 +21,7 @@ var FamiliarData = {
     "void":     { name: "Void Kargyle",          grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
     "twilight": { name: "Twilight Kargyle",      grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
     "femuto":   { name: "Femuto",                grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
-    "lunafont": { name: "Lunafont",              grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
+    "lunafont": { name: "Lunafont",              grade: "H", respawn: 60,    confirmed: false, tabs: 2 },
     "karasha":  { name: "Karasha the Dark One",  grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
     "paragas":  { name: "Paragas the Mad",       grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
     "veldon":   { name: "Veldon",                grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
