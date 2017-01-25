@@ -1,11 +1,11 @@
 "use strict";
 
 var _ = require('lodash');
-var ConfigFile = require("../config.json");
-var Commands   = require('../utilities/commands.js').Commands;
-var Utilities  = require('../utilities/utilities.js').Utilities;
+var ConfigFile   = require("../config.json");
+var Commands     = require('../utilities/commands.js').Commands;
+var Utilities    = require('../utilities/utilities.js').Utilities;
 var MessageQueue = require('../models/message-queue.js').MessageQueue;
-var moment     = require('moment'); 
+var moment       = require('moment'); 
 
 var FamiliarData = {
     // Hakanas Highlands
