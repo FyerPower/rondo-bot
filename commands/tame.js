@@ -9,40 +9,62 @@ var moment       = require('moment');
 
 var FamiliarData = {
     // Hakanas Highlands
-    "garme":    { name: "Garme",                 grade: "H", respawn: 60,    confirmed: true, tabs: 2 }, 
-    "agnes":    { name: "Agnes the Red",         grade: "H", respawn: 60,    confirmed: true, tabs: 2 }, 
+    "garme":    { name: "Garme",                 zone: "Hakanas Highlands", grade: "H",    respawn: 60,    confirmed: true  }, 
+    "agnes":    { name: "Agnes the Red",         zone: "Hakanas Highlands", grade: "H",    respawn: 60,    confirmed: true  }, 
     // Parna's Coast
-    "terror":   { name: "Terror Kerav",          grade: "H", respawn: 120,   confirmed: true, tabs: 2 },
-    "caspert":  { name: "Venomous Caspert",      grade: "H", respawn: 120,   confirmed: true, tabs: 1 },
-    "apoc":     { name: "Apocolypse",            grade: "H", respawn: 300,   confirmed: true, tabs: 4 },
-    "karresh":  { name: "Karresh",               grade: "H", respawn: 140,   confirmed: true, tabs: 1 },
+    "terror":   { name: "Terror Kerav",          zone: "Parna's Coast", grade: "H",    respawn: 120,   confirmed: true  },
+    "caspert":  { name: "Venomous Caspert",      zone: "Parna's Coast", grade: "H",    respawn: 120,   confirmed: true  },
+    "apoc":     { name: "Apocolypse",            zone: "Parna's Coast", grade: "H",    respawn: 300,   confirmed: true  },
+    "karresh":  { name: "Karresh",               zone: "Parna's Coast", grade: "H",    respawn: 140,   confirmed: true  },
     // Triteal Rift
-    "leto":     { name: "Void Letonsia",         grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
-    "void":     { name: "Void Kargyle",          grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
-    "twilight": { name: "Twilight Kargyle",      grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
-    "femuto":   { name: "Femuto",                grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
-    "lunafont": { name: "Lunafont",              grade: "H", respawn: 60,    confirmed: false, tabs: 2 },
-    "karasha":  { name: "Karasha the Dark One",  grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
-    "paragas":  { name: "Paragas the Mad",       grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
-    "veldon":   { name: "Veldon",                grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
+    "leto":     { name: "Void Letonsia",         zone: "Triteal Rift", grade: "H",    respawn: 120,   confirmed: false },
+    "void":     { name: "Void Kargyle",          zone: "Triteal Rift", grade: "H",    respawn: 120,   confirmed: false },
+    "twilight": { name: "Twilight Kargyle",      zone: "Triteal Rift", grade: "H",    respawn: 120,   confirmed: false },
+    "femuto":   { name: "Femuto",                zone: "Triteal Rift", grade: "H",    respawn: 120,   confirmed: false },
+    "lunafont": { name: "Lunafont",              zone: "Triteal Rift", grade: "H",    respawn: 60,    confirmed: false },
+    "karasha":  { name: "Karasha the Dark One",  zone: "Triteal Rift", grade: "H",    respawn: 120,   confirmed: false },
+    "paragas":  { name: "Paragas the Mad",       zone: "Triteal Rift", grade: "H",    respawn: 120,   confirmed: false },
+    "veldon":   { name: "Veldon",                zone: "Triteal Rift", grade: "H",    respawn: 120,   confirmed: false },
     // Cloying Wastes
-    "trino":    { name: "Trinoceros",            grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
-    "poyo":     { name: "Poyo",                  grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
-    "panos":    { name: "Panos",                 grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
-    "chanus":   { name: "Chanus",                grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
-    "tolus":    { name: "Tolus",                 grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
-    "bajarn":   { name: "Bajarn",                grade: "H", respawn: 120,   confirmed: false, tabs: 2 },
-    "shakiba":  { name: "Shakiba",               grade: "L", respawn: 480,   confirmed: true,  tabs: 2 }
+    "shakiba":  { name: "Shakiba",               zone: "Cloying Wastes", grade: "L",    respawn: 480,   confirmed: true  },
+    "trino":    { name: "Trinoceros",            zone: "Cloying Wastes", grade: "H",    respawn: 120,   confirmed: false },
+    "poyo":     { name: "Poyo",                  zone: "Cloying Wastes", grade: "H",    respawn: 120,   confirmed: false },
+    "panos":    { name: "Panos",                 zone: "Cloying Wastes", grade: "H",    respawn: 120,   confirmed: false },
+    "chanus":   { name: "Chanus",                zone: "Cloying Wastes", grade: "H",    respawn: 120,   confirmed: false },
+    "tolus":    { name: "Tolus",                 zone: "Cloying Wastes", grade: "H",    respawn: 120,   confirmed: false },
+    "bajarn":   { name: "Bajarn",                zone: "Cloying Wastes", grade: "H",    respawn: 120,   confirmed: false },
+    // Stygaea
+    "jamiot":   { name: "Jamiot",                zone: "Stygaea", grade: "L",    respawn: 600,   confirmed: false },
+    "calyptos": { name: "Calyptos",              zone: "Stygaea", grade: "H",    respawn: 600,   confirmed: true },
+    "finion":   { name: "Finion",                zone: "Stygaea", grade: "H",    respawn: 360,   confirmed: true },
+    "magnatu":  { name: "Magnatu",               zone: "Stygaea", grade: "H",    respawn: 360,   confirmed: false },
 };
 
-var extHelpMsg = "Tracks when a familiar was either tamed or killed and informs of its respawn.  List of Supported Familiars:";
+var extHelpMsg = ["Tracks when a familiar was either tamed or killed and informs of its respawn.  List of Supported Familiars:"];
+var gradeEmoji = { "H": "<:heroic:276033765417943040>", "L": "<:legendary:276033783101259777>" };
+var msgGroup = [];
+var lastZone = "";
 for (var key in FamiliarData) {
     if (!FamiliarData.hasOwnProperty(key)) continue;
-    extHelpMsg = extHelpMsg + "\n\t`"+key+"`:"+_.times(11-key.length, function(){return "  ";}).join("")+"**"+FamiliarData[key].name+"** ";
-    if(FamiliarData[key].respawn){
-        extHelpMsg = extHelpMsg + " *(respawn: "+FamiliarData[key].respawn+" minutes"+(FamiliarData[key].confirmed ? "" : "?")+")*";
+    
+    if(lastZone === "" || lastZone != FamiliarData[key].zone){
+        if(msgGroup.length > 0){
+            extHelpMsg.push(msgGroup.join("\n"));
+            msgGroup = [];
+        }
+        msgGroup.push("\t**"+FamiliarData[key].zone+"**:");
+        lastZone = FamiliarData[key].zone;
     }
+
+    var msg = "\t`"+key+"`:"+_.times(11-key.length, function(){return "  ";}).join("")+gradeEmoji[FamiliarData[key].grade]+" **"+FamiliarData[key].name+"** ";
+    if(FamiliarData[key].respawn){
+        msg = msg + " *(respawn: "+FamiliarData[key].respawn+" minutes"+(FamiliarData[key].confirmed ? "" : "?")+")*";
+    }
+    msgGroup.push(msg);
 }
+extHelpMsg.push(msgGroup.join("\n"));
+
+
 
 Commands.add("tame", {
     name: "tame",

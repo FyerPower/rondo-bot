@@ -31,10 +31,22 @@ Commands.add("help", {
                     msgArray.push("**Usage:** `" + ConfigFile.command_prefix + command.name + " " + command.usage + "`");
                 }
                 if(command.hasOwnProperty("description") && command.description){
-                    msgArray.push("**Description:** " + command.description);
+                    if(typeof command.description === "string"){
+                        msgArray.push("**Description:** " + command.description);
+                        message.channel.sendMessage(msgArray);
+                    }
+                    else {
+                        msgArray.push("**Description:** " + command.description[0]);
+                        message.channel.sendMessage(msgArray);
+                        _.each(_.slice(command.description, 1), function(msg, index){
+                            setTimeout(function(){
+                                message.channel.sendMessage(msg);
+                            }, (25*(index+1)));
+                        });
+                    }
+                } else {
+                    message.channel.sendMessage(msgArray);
                 }
-
-                message.channel.sendMessage(msgArray);
             } else {
                 message.channel.sendMessage(message.author + ": No command `"+suffix+"` could be found.");
             }
