@@ -107,10 +107,3 @@ Commands.add("tame", {
         }
     }
 });
-
-
-// Good monrin Riders!
-// But dinos are a lot like chickens... :chicken:
-// Popsicle chicken.
-// We read most feedback on Discord
-
