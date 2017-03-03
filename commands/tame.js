@@ -17,7 +17,7 @@ var FamiliarData = {
     "apoc":     { name: "Apocolypse",            zone: "Parna's Coast", grade: "H",    respawn: 300,   confirmed: true  },
     "karresh":  { name: "Karresh",               zone: "Parna's Coast", grade: "H",    respawn: 140,   confirmed: true  },
     // Triteal Rift
-    "leto":     { name: "Void Letonsia",         zone: "Triteal Rift", grade: "H",    respawn: 120,   confirmed: false },
+    "leto":     { name: "Void Letonsia",         zone: "Triteal Rift", grade: "H",    respawn: 360,   confirmed: true  },
     "void":     { name: "Void Kargyle",          zone: "Triteal Rift", grade: "H",    respawn: 120,   confirmed: false },
     "twilight": { name: "Twilight Kargyle",      zone: "Triteal Rift", grade: "H",    respawn: 120,   confirmed: false },
     "femuto":   { name: "Femuto",                zone: "Triteal Rift", grade: "H",    respawn: 120,   confirmed: false },
