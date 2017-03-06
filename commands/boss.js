@@ -13,12 +13,12 @@ var BossData = {
     "faudrus":    { name: "Faudrus",           zone: "Triteal Rift",    respawn: 480 },
     "kelsier":    { name: "Kelsier",           zone: "Triteal Rift",    respawn: 480 },
     "flam":       { name: "Flam",              zone: "Triteal Rift",    respawn: 480 },
-    "jumawu":     { name: "Lazart",            zone: "Triteal Rift",    respawn: 1140 },
+    "jumawu":     { name: "Jumawu",            zone: "Triteal Rift",    respawn: 1140 },
     // Cloying Wastes
     "lazart":     { name: "Lazart",            zone: "Cloying Wastes",  respawn: 480 },
     "mupadin":    { name: "Mupadin",           zone: "Cloying Wastes",  respawn: 480 },
     "zenon":      { name: "Zenon the Slayer",  zone: "Cloying Wastes",  respawn: 480 },
-    "sandstorm":  { name: "Sandstorm",         zone: "Cloying Wastes",  respawn: 480 },
+    "sandstorm":  { name: "Sandstorm",         zone: "Cloying Wastes",  respawn: 1140 },
 };
 
 var extHelpMsg = ["Tracks when a Worldboss was last killed and informs of its respawn.  List of Supported Bosses:"];
@@ -63,10 +63,10 @@ Commands.add("boss", {
                     respawnTime.setMinutes(respawnTime.getMinutes() + boss.respawn);
                     msg = msg + " :white_small_square: *respawn at " + moment(respawnTime).format("LT z") + " EST*";
 
-                    var reminderTime = respawnTime;
+                    var reminderTime = new Date(respawnTime);
                     reminderTime.setMinutes(reminderTime.getMinutes() - 10);
-                    var reminderMessage = "**"+boss.name+"**" + notes + " will respawn in 10 minutes. (__" + moment(respawnTime).format("LT z") + " EST__)";
-                    MessageQueue.add(message.channel, reminderMessage, reminderTime);
+                    var reminderMessage = "**"+boss.name+"**" + notes + " will respawn in 10 minutes. *(at roughly: " + moment(respawnTime).format("LT z") + " EST)*";
+                    MessageQueue.add(message.channel, reminderMessage, reminderTime, Utilities.minutesToMs(15));
                 }
 
                 message.channel.sendMessage(msg);

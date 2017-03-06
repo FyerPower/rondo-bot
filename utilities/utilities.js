@@ -1,10 +1,20 @@
 "use strict";
 
 class Utilities {
-    safeDeleteMessage(message){
+    safeDeleteMessage(message, timer){
+        if(!timer)
+            timer = 100;
         setTimeout(() => {
             message.delete();
-        }, 100);
+        }, timer);
+    }
+
+    minutesToMs(minutes){
+        return minutes * 60 * 1000;
+    }
+
+    secondsToMs(seconds){
+        return seconds * 1000;
     }
 }
 

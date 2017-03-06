@@ -91,7 +91,7 @@ Commands.add("tame", {
                     respawnTime.setMinutes(respawnTime.getMinutes() + respawnDuration);
                     msg = msg + " :white_small_square: __respawn at " + moment(respawnTime).format("LT z") + "__ "+confirmedMsg;
 
-                    var reminderTime = respawnTime;
+                    var reminderTime = new Date(respawnTime);
                     reminderTime.setMinutes(reminderTime.getMinutes() - 5);
                     var reminderMessage = "**"+familiar.name+"**" + notes + " will respawn in 5 minutes. "+confirmedMsg;
                     MessageQueue.add(message.channel, reminderMessage, reminderTime);

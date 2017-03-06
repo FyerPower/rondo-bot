@@ -1,7 +1,8 @@
 "use strict";
 
 var MessageQueue = require("../models/message-queue").MessageQueue;
-var Logger = require("../utilities/logger.js").Logger;
+var Logger       = require("../utilities/logger.js").Logger;
+var Utilities    = require('../utilities/utilities.js').Utilities;
 
 class MessageQueueWorker {
     constructor(){
@@ -12,10 +13,12 @@ class MessageQueueWorker {
         this.interval = setInterval(() => {
             var nextMessage = MessageQueue.nextMessage();
             while(nextMessage && nextMessage.time < new Date()) {
-                Logger.log("info", "Sending Message from Queue");
-                nextMessage.channel.sendMessage(nextMessage.message);
+                nextMessage.channel.sendMessage(nextMessage.message).then(function(msg){
+                    if(nextMessage.selfDeleteAfter){
+                        Utilities.safeDeleteMessage(message, nextMessage.selfDeleteAfter);
+                    }
+                });
                 MessageQueue.remove(nextMessage);
-                
                 nextMessage = MessageQueue.nextMessage();
             }
         }, 15000, MessageQueue);

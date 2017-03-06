@@ -9,8 +9,13 @@ class MessageQueue {
         this.messages = [];
     }
 
-    add(channel, message, time){
-        this.messages.push({channel: channel, message: message, time: time});
+    add(channel, message, time, selfDeleteAfter){
+        this.messages.push({
+            channel: channel, 
+            message: message, 
+            time: time, 
+            selfDeleteAfter: selfDeleteAfter
+        });
         this.messages = _.sortBy(this.messages, ['time']);
     }
 
