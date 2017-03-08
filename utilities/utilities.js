@@ -16,6 +16,10 @@ class Utilities {
     secondsToMs(seconds){
         return seconds * 1000;
     }
+
+    stringToInteger(str){
+        return parseInt(str.replace(/[^0-9]/g, ''));
+    }
 }
 
 exports.Utilities = new Utilities();

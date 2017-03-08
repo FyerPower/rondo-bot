@@ -15,7 +15,7 @@ class MessageQueueWorker {
             while(nextMessage && nextMessage.time < new Date()) {
                 nextMessage.channel.sendMessage(nextMessage.message).then(function(msg){
                     if(nextMessage.selfDeleteAfter){
-                        Utilities.safeDeleteMessage(message, nextMessage.selfDeleteAfter);
+                        Utilities.safeDeleteMessage(msg, nextMessage.selfDeleteAfter);
                     }
                 });
                 MessageQueue.remove(nextMessage);

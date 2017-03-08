@@ -60,7 +60,7 @@ client.on("message", (message) => {
     if (message.author.id != client.user.id && (message.content[0] === ConfigFile.command_prefix)) {
         Logger.log("info", message.author.username + " executed <" + message.content + ">");
         var cmdTxt = message.content.split(" ")[0].substring(1).toLowerCase();
-        var suffix = message.content.substring(cmdTxt.length + 2); //add one for the prefix and one for the space
+        var suffix = message.content.substring(cmdTxt.length + 2).trim(); //add one for the prefix and one for the space
 
         if (Commands.hasCommand(cmdTxt)) {
             if(Commands.hasCooldown(cmdTxt)){
