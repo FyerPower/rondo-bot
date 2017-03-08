@@ -21,6 +21,7 @@ var BossData = {
     "zenon":      { name: "Zenon the Slayer",  zone: "Cloying Wastes",  respawn: 480 },
     "sandstorm":  { name: "Sandstorm",         zone: "Cloying Wastes",  respawn: 1140 }
 };
+// "test":  { name: "Tester McTesty", zone: "Testing Zone",  respawn: 5 }
 
 Commands.add("boss", {
     name: "boss",
@@ -29,7 +30,7 @@ Commands.add("boss", {
     process: (message, suffix) => {
         if(suffix){
             var indexOfSpace = suffix.indexOf(" ") > 0 ? suffix.indexOf(" ") : suffix.length;
-            var bossName = suffix.substring(0, indexOfSpace);
+            var bossName  = suffix.substring(0, indexOfSpace);
             var bossNotes = suffix.substring(indexOfSpace+1, suffix.length);
 
             if(bossName === 'list'){

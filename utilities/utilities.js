@@ -1,12 +1,18 @@
 "use strict";
 
+var Logger = require("./logger.js").Logger;
+
 class Utilities {
     safeDeleteMessage(message, timer){
-        if(!timer)
+        // Default timer to 100ms
+        if(!timer){
             timer = 100;
-        setTimeout(() => {
-            message.delete();
-        }, timer);
+        }
+
+        Logger.log("silly", "Utility Delete Message - Message deleting in "+timer+"ms");
+        setTimeout((msg) => {
+            msg.delete();
+        }, timer, message);
     }
 
     minutesToMs(minutes){

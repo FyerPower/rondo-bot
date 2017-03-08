@@ -14,7 +14,9 @@ class MessageQueueWorker {
             var nextMessage = MessageQueue.nextMessage();
             while(nextMessage && nextMessage.time < new Date()) {
                 nextMessage.channel.sendMessage(nextMessage.message).then(function(msg){
+                    Logger.log("silly", "Message Queue - Message Sent From Queue");
                     if(nextMessage.selfDeleteAfter){
+                        Logger.log("silly", "Message Queue - Message self destruct activated");
                         Utilities.safeDeleteMessage(msg, nextMessage.selfDeleteAfter);
                     }
                 });
