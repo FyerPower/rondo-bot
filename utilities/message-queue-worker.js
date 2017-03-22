@@ -13,17 +13,23 @@ class MessageQueueWorker {
         this.interval = setInterval(() => {
             var nextMessage = MessageQueue.nextMessage();
             while(nextMessage && nextMessage.time < new Date()) {
-                nextMessage.channel.sendMessage(nextMessage.message).then(function(msg){
-                    Logger.log("silly", "Message Queue - Message Sent From Queue");
-                    if(nextMessage.selfDeleteAfter){
-                        Logger.log("silly", "Message Queue - Message self destruct activated");
-                        Utilities.safeDeleteMessage(msg, nextMessage.selfDeleteAfter);
-                    }
-                });
+                (function(nextMessage){
+                    nextMessage.channel.sendMessage(nextMessage.message)
+                        .then(function(msg){
+                            Logger.log("info", "Message Queue - Message Sent From Queue");
+                            if(nextMessage.selfDeleteAfter){
+                                Logger.log("info", "Message Queue - Message self destruct activated");
+                                Utilities.safeDeleteMessage(msg, nextMessage.selfDeleteAfter);
+                            }
+                        })
+                        .catch(function(){
+                            Logger.log("info", "Message Queue - Error Sending Message from Queue");                        
+                        });
+                })(nextMessage);
                 MessageQueue.remove(nextMessage);
                 nextMessage = MessageQueue.nextMessage();
             }
-        }, 15000, MessageQueue);
+        }, 15000);
     }
 
     stop(){

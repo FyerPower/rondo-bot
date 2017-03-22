@@ -25,10 +25,14 @@ class BossKills {
         return this.bossKills;
     }
 
+    clear(){
+        this.bossKills = [];
+    }
+
     clearOldKills() {
         var now = new Date();
-        this.bossKills = _.without(this.bossKills, function(bk){
-            return (bk.respawnTime < now);
+        this.bossKills = _.filter(this.bossKills, function(bk){
+            return (bk.respawnTime > now);
         });
     }
 }

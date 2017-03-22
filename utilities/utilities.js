@@ -1,5 +1,6 @@
 "use strict";
 
+var _ = require('lodash');
 var Logger = require("./logger.js").Logger;
 
 class Utilities {
@@ -25,6 +26,22 @@ class Utilities {
 
     stringToInteger(str){
         return parseInt(str.replace(/[^0-9]/g, ''));
+    }
+
+    round(number, places){
+        if(!places || places == 0){
+            return _.round(number, 0);
+        } else if (_.round(number, places) == _.round(number, places - 1)){
+            return this.round(number, places - 1);
+        } else {
+            return _.round(number, places);
+        }
+    }
+
+    date(originalDate, modifyMinutes){
+        var date = new Date(originalDate);
+        date.setMinutes( date.getMinutes() + (modifyMinutes || 0) );
+        return date;
     }
 }
 
