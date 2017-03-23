@@ -21,12 +21,12 @@ var BossData = {
     "zenon":      {  name: "Zenon the Slayer",  zone: "Cloying Wastes",   respawn: 480,   reminder: 10,  selfDestructReminder: 10 },
     "sandstorm":  {  name: "Sandstorm",         zone: "Cloying Wastes",   respawn: 1140,  reminder: 10,  selfDestructReminder: 10 },
     // Ellora Sanctuary
-    "lenazar":    {  name: "Lenazar",           zone: "Ellora Sanctuary", respawn: 480,   reminder: 10,  selfDestructReminder: 10 },
+    "lenazar":    {  name: "Lenazar",           zone: "Ellora Sanctuary", respawn: 360,   reminder: 10,  selfDestructReminder: 10 },
     // Windy Canyon
-    "roa":        {  name: "Prion Roa",         zone: "Windy Canyon",     respawn: 480,   reminder: 10,  selfDestructReminder: 10 },
+    "roa":        {  name: "Prion Roa",         zone: "Windy Canyon",     respawn: 360,   reminder: 10,  selfDestructReminder: 10 },
 
     // TEST
-    "test":       {  name: "Tester McTesty",    zone: "Testing Zone",     respawn: 3,     reminder: 1,   selfDestructReminder: 1 }
+    //"test":       {  name: "Tester McTesty",    zone: "Testing Zone",     respawn: 3,     reminder: 1,   selfDestructReminder: 1 }
 };
 
 Commands.add("boss", {
