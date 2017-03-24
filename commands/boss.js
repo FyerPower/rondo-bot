@@ -65,7 +65,7 @@ function notes(notes){
 function displayBossList(channel){
     var msg = ["__List of upcoming boss spawns:__"];
     _.each(BossKills.list(), function(bk){
-        msg.push(":white_small_square: **"+bk.boss.name+"**"+notes(bk.notes)+" respawns at: " + moment(bk.respawnTime).format("LT z") + " EST");
+        msg.push(":white_small_square: **"+bk.boss.name+"**"+notes(bk.notes)+" respawns at: " + moment(bk.respawnTime).format("LT z") + " EST :white_small_square: " + moment().to(moment(bk.respawnTime)));
     });
     if(msg.length === 1){
         msg.push(":white_small_square: *No Upcoming Bosses*");
